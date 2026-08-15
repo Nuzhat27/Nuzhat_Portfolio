@@ -990,11 +990,23 @@ function SkillGraph() {
   const clearSkill = () => setHoveredSkill(null);
 
   const tooltipStyle = hoveredSkill
-    ? {
-        left: `${(hoveredSkill.x / 560) * 100}%`,
-        top: `${(hoveredSkill.y / 560) * 100}%`,
-      }
-    : undefined;
+  ? {
+      left: `${Math.max(
+        12,
+        Math.min(
+          (hoveredSkill.x / 560) * 100,
+          88
+        )
+      )}%`,
+      top: `${Math.max(
+        12,
+        Math.min(
+          (hoveredSkill.y / 560) * 100,
+          88
+        )
+      )}%`,
+    }
+  : undefined;
 
   const selectCategory = (groupId) => {
     setActiveId((current) => current === groupId ? null : groupId);
