@@ -976,16 +976,27 @@ function SkillGraph() {
   };
 
   const showSkill = (skill, position) => {
-    const placement = position.y < 205
-      ? "top"
-      : position.y > 355
-        ? "bottom"
-        : Math.cos(position.angle || 0) >= 0
-          ? "right"
-          : "left";
+  let placement;
 
-    setHoveredSkill({ ...skill, ...position, placement });
-  };
+  if (position.y < 175) {
+    // near the top edge — put the tooltip below the node instead
+    placement = "bottom";
+  } else if (position.y > 385) {
+    // near the bottom edge — put the tooltip above the node instead
+    placement = "top";
+  } else if (position.x < 175) {
+    // near the left edge — put the tooltip to the right instead
+    placement = "right";
+  } else if (position.x > 385) {
+    // near the right edge — put the tooltip to the left instead
+    placement = "left";
+  } else {
+    // otherwise, use the original angle-based logic
+    placement = Math.cos(position.angle || 0) >= 0 ? "right" : "left";
+  }
+
+  setHoveredSkill({ ...skill, ...position, placement });
+};
 
   const clearSkill = () => setHoveredSkill(null);
 

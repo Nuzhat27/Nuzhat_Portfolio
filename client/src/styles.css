@@ -625,35 +625,3 @@ html[data-theme="light"] .hero-reference-image img{
   border-color:var(--line-strong);
   box-shadow:0 30px 80px rgba(75,51,26,.16);
 }
-.skill-graph-stage {
-  position: relative;
-  overflow: visible;
-}
-
-.cx-tooltip {
-  position: absolute;
-  z-index: 100;
-  width: 210px;
-  max-width: 210px;
-  box-sizing: border-box;
-}
-
-/* Left-side nodes */
-.tooltip-left {
-  transform: translate(15px, -50%);
-}
-
-/* Right-side nodes */
-.tooltip-right {
-  transform: translate(calc(-100% - 15px), -50%);
-}
-
-/* Top nodes */
-.tooltip-top {
-  transform: translate(-50%, 15px);
-}
-
-/* Bottom nodes */
-.tooltip-bottom {
-  transform: translate(-50%, calc(-100% - 15px));
-}
