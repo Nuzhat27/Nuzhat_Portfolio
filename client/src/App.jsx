@@ -867,7 +867,7 @@ function Portfolio() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/nuzhat-firdosh-8894842a/"
+              href="https://www.linkedin.com/in/nuzhat-firdosh-8894842a8/"
               target="_blank"
               rel="noreferrer"
             >
